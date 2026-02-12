@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Haddad - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            padding: 30px 0;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .accomplishments {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .accomplishment {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+
+        .accomplishment:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .accomplishment h3 {
+            color: #667eea;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+        }
+
+        .accomplishment .date {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .accomplishment p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .accomplishment .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .accomplishment .tag {
+            background: #f0f0f0;
+            color: #667eea;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .accomplishment {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mark Haddad</h1>
+            <p>Portfolio & Accomplishments</p>
+        </header>
+
+        <div class="accomplishments" id="accomplishmentsList"></div>
+
+        <footer>
+            <p>&copy; 2026 Mark Haddad. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // EASY TO EDIT: Add your accomplishments here
+        const accomplishments = [
+            {
+                title: "Built Interactive Web Dashboard",
+                date: "2026-01-15",
+                description: "Created a real-time analytics dashboard using React and D3.js, improving data visualization by 40%.",
+                tags: ["React", "D3.js", "JavaScript", "Web Development"]
+            },
+            {
+                title: "Led Cross-Functional Project",
+                date: "2025-12-01",
+                description: "Coordinated a team of 5 developers to deliver a mobile application 2 weeks ahead of schedule.",
+                tags: ["Leadership", "Project Management", "Agile"]
+            },
+            {
+                title: "Open Source Contribution",
+                date: "2025-11-20",
+                description: "Contributed 15+ pull requests to a popular open source project, fixing bugs and adding new features.",
+                tags: ["Open Source", "GitHub", "Community"]
+            },
+            {
+                title: "Completed AWS Certification",
+                date: "2025-10-30",
+                description: "Earned AWS Solutions Architect Associate certification, demonstrating expertise in cloud infrastructure.",
+                tags: ["AWS", "Cloud Computing", "Certification"]
+            },
+            {
+                title: "Optimized Database Performance",
+                date: "2025-09-15",
+                description: "Refactored database queries reducing query time by 60% and improving overall application performance.",
+                tags: ["Database", "SQL", "Performance Optimization"]
+            }
+        ];
+
+        // Function to render accomplishments
+        function renderAccomplishments() {
+            const list = document.getElementById('accomplishmentsList');
+            list.innerHTML = '';
+
+            // Sort by date (newest first)
+            const sorted = [...accomplishments].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            sorted.forEach(accomplishment => {
+                const div = document.createElement('div');
+                div.className = 'accomplishment';
+                
+                const date = new Date(accomplishment.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                const tagsHTML = accomplishment.tags
+                    .map(tag => `<span class="tag">${tag}</span>`)
+                    .join('');
+
+                div.innerHTML = `
+                    <h3>${accomplishment.title}</h3>
+                    <div class="date">${date}</div>
+                    <p>${accomplishment.description}</p>
+                    <div class="tags">${tagsHTML}</div>
+                `;
+
+                list.appendChild(div);
+            });
+        }
+
+        // Render on page load
+        document.addEventListener('DOMContentLoaded', renderAccomplishments);
+    </script>
+</body>
+</html>
