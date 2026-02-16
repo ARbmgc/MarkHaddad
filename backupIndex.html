@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Haddad - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-card: #16161d;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1aa;
+            --accent-1: #00d4ff;
+            --accent-2: #ff6b9d;
+            --accent-gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            --border-radius: 24px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Snap scrolling for slide effect */
+        .container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            scroll-snap-align: start;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        /* Background decoration */
+        section::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: var(--accent-gradient);
+            opacity: 0.03;
+            border-radius: 50%;
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        section:nth-child(odd)::before {
+            top: -200px;
+            right: -200px;
+        }
+
+        section:nth-child(even)::before {
+            bottom: -200px;
+            left: -200px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 450px;
+            animation: fadeInRight 1s ease-out;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-image img:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(0, 212, 255, 0.3);
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--accent-gradient);
+            color: var(--bg-dark);
+            text-decoration: none;
+            border-radius: calc(var(--border-radius) / 2);
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .about-content p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Work Section */
+        .work-content {
+            max-width: 1400px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .work-content h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .work-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .work-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+        }
+
+        .work-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .work-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .work-card-content {
+            padding: 2rem;
+        }
+
+        .work-card h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .work-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 700px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .contact-content h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-content p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            padding: 1rem 2rem;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: calc(var(--border-radius) / 2);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .contact-link:hover {
+            border-color: var(--accent-1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        .scroll-indicator::before {
+            content: '↓';
+            font-size: 2rem;
+            color: var(--accent-1);
+        }
+
+        /* Animations */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section id="home">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Mark Haddad</h1>
+                    <p class="subtitle">Product Strategist • AI Innovator • Spatial Computing Expert</p>
+                    <a href="#contact" class="cta-button">Get In Touch</a>
+                </div>
+                <div class="hero-image">
+                    <img src="MarkHeadshot.jpeg" alt="Mark Haddad">
+                </div>
+            </div>
+            <div class="scroll-indicator"></div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>
+                    I'm an Associate Director of Product Strategy & Innovation at Moody's Analytics, where I leverage 
+                    generative AI and emerging technologies to revolutionize financial product development and user experiences.
+                </p>
+                <p>
+                    I bring together AI and design thinking to lead end-to-end innovation from discovery through implementation and scale. At Moody's, I've built AI tools and workflows that drive real impact. 
+                    My experience across innovation teams in multiple industries gives me a fresh perspective on complex problems, regardless of the domain.
+                </p>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work">
+            <div class="work-content">
+                <h2>Featured Work</h2>
+                <div class="work-grid">
+                    <div class="work-card">
+                        <img src="filler1.jpeg" alt="AR Financial Dashboard">
+                        <div class="work-card-content">
+                            <h3>AR Financial Dashboard</h3>
+                            <p>Developed an immersive augmented reality financial dashboard for Apple Vision Pro, integrating live news feeds, generative AI, and proprietary Moody's data via RAG to deliver spatial company insights and expert recommendations.</p>
+                        </div>
+                    </div>
+                    <div class="work-card">
+                        <img src="filler2.jpeg" alt="Voice AI Agent Platform">
+                        <div class="work-card-content">
+                            <h3>Voice AI Agent Platform</h3>
+                            <p>Built a voice-based AI agent platform on Oculus Quest 3 that revolutionizes how financial analysts interact with data, enabling hands-free analysis through natural language commands and immersive 3D visualizations.</p>
+                        </div>
+                    </div>
+                    <div class="work-card">
+                        <img src="filler3.jpeg" alt="AI-Powered Product Discovery">
+                        <div class="work-card-content">
+                            <h3>AI-Powered Product Discovery</h3>
+                            <p>Leveraged generative AI to accelerate the entire product lifecycle from market research to MVP development, utilizing semantic analysis to extract insights from customer feedback and create predictive analytics models.</p>
+                        </div>
+                    </div>
+                    <div class="work-card">
+                        <img src="filler4.jpeg" alt="Innovation Workshops">
+                        <div class="work-card-content">
+                            <h3>Innovation Workshops</h3>
+                            <p>Facilitated 30+ design thinking workshops generating breakthrough product ideas across emerging tech including quantum computing, blockchain, and spatial computing, saving over $2MM in external consulting costs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-content">
+                <h2>Let's Connect</h2>
+                <p>
+                    I'm always interested in exploring new opportunities at the intersection of AI, spatial computing, 
+                    and product innovation. Let's connect and discuss how emerging technologies can transform your business.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:markhaddad1017@gmail.com" class="contact-link">Email</a>
+                    <a href="https://www.linkedin.com/in/mark-haddad-arvrmeta/" class="contact-link">LinkedIn</a>
+                    <a href="https://github.com/ARbmgc" class="contact-link">GitHub</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add parallax effect to hero image
+        const heroImage = document.querySelector('.hero-image img');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            if (h
