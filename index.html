@@ -403,6 +403,11 @@
             transform: scale(1.15);
         }
 
+        .flow-node--lg img {
+            width: 68px;
+            height: 68px;
+        }
+
         .flow-node span {
             font-size: 0.68rem;
             font-weight: 500;
@@ -690,7 +695,7 @@
 
                         <!-- Step 2: Jenkins -->
                         <div class="flow-row">
-                            <div class="flow-node">
+                            <div class="flow-node flow-node--lg">
                                 <img src="./Jenkins.png" alt="Jenkins">
                                 <span>Jenkins</span>
                             </div>
@@ -705,11 +710,11 @@
                         <div class="flow-branch">
                             <div class="flow-branch-inputs">
                                 <div class="flow-branch-pair">
-                                    <div class="flow-node">
+                                    <div class="flow-node flow-node--lg">
                                         <img src="./Github.png" alt="GitHub">
                                         <span>GitHub</span>
                                     </div>
-                                    <div class="flow-node">
+                                    <div class="flow-node flow-node--lg">
                                         <img src="./AmazonS3.png" alt="Amazon S3">
                                         <span>Amazon S3</span>
                                     </div>
@@ -787,7 +792,7 @@
                     and product innovation. Let's connect and discuss how emerging technologies can transform your business.
                 </p>
                 <div class="contact-links">
-                    <a href="mailto:markhaddad1017@gmail.com" class="contact-link">Email</a>
+                    <a href="/cdn-cgi/l/email-protection#dfb2beadb4b7bebbbbbebbeeefeee89fb8b2beb6b3f1bcb0b2" class="contact-link">Email</a>
                     <a href="https://www.linkedin.com/in/mark-haddad-arvrmeta/" class="contact-link">LinkedIn</a>
                     <a href="https://github.com/ARbmgc" class="contact-link">GitHub</a>
                 </div>
@@ -796,7 +801,7 @@
 
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -810,10 +815,3 @@
         const heroImage = document.querySelector('.hero-image img');
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            if (heroImage) {
-                heroImage.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-    </script>
-</body>
-</html>
