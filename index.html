@@ -33,7 +33,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Snap scrolling for slide effect */
         .container {
             height: 100vh;
             overflow-y: scroll;
@@ -51,7 +50,6 @@
             position: relative;
         }
 
-        /* Background decoration */
         section::before {
             content: '';
             position: absolute;
@@ -75,7 +73,7 @@
             left: -200px;
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             display: flex;
             align-items: center;
@@ -150,7 +148,7 @@
             box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
         }
 
-        /* About Section */
+        /* About */
         .about-content {
             max-width: 900px;
             text-align: center;
@@ -173,7 +171,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Work Section */
+        /* Work */
         .work-content {
             max-width: 1400px;
             width: 100%;
@@ -233,7 +231,7 @@
             line-height: 1.6;
         }
 
-        /* Featured Project Section */
+        /* Featured Project */
         .featured-project {
             display: flex;
             align-items: center;
@@ -275,7 +273,7 @@
 
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             border-radius: var(--border-radius);
@@ -291,7 +289,204 @@
             border-radius: var(--border-radius);
         }
 
-        /* Contact Section */
+        /* ── Presentation Agent Section ── */
+        .pres-agent-wrapper {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Left: description */
+        .pres-agent-desc {
+            flex: 1;
+            min-width: 280px;
+            max-width: 420px;
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        .pres-agent-desc h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1.25rem;
+            text-align: left;
+        }
+
+        .pres-agent-desc p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .pres-agent-desc ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .pres-agent-desc ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .pres-agent-desc ul li::before {
+            content: '';
+            flex-shrink: 0;
+            margin-top: 0.45rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+        }
+
+        /* Right: flow diagram */
+        .pres-agent-flow {
+            flex: 1;
+            min-width: 300px;
+            max-width: 520px;
+            animation: fadeInRight 1s ease-out;
+        }
+
+        .flow-diagram {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Each row in the flow */
+        .flow-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        /* A single node */
+        .flow-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            flex-shrink: 0;
+        }
+
+        .flow-node img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            padding: 6px;
+            transition: transform 0.2s ease;
+        }
+
+        .flow-node img:hover {
+            transform: scale(1.15);
+        }
+
+        .flow-node span {
+            font-size: 0.68rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-align: center;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        /* Arrows between nodes */
+        .flow-arrow-h {
+            font-size: 1.1rem;
+            color: var(--accent-1);
+            opacity: 0.7;
+            flex-shrink: 0;
+            margin-top: -14px; /* align with image center */
+        }
+
+        .flow-arrow-v {
+            font-size: 1.1rem;
+            color: var(--accent-1);
+            opacity: 0.7;
+            margin: 0.2rem 0;
+        }
+
+        /* Step label */
+        .flow-step-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            opacity: 0.6;
+            text-align: center;
+            max-width: 380px;
+            padding: 0 0.5rem 0.3rem;
+            line-height: 1.5;
+        }
+
+        /* Branch row: GitHub + S3 feeding into Cursor */
+        .flow-branch {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .flow-branch-inputs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .flow-branch-pair {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+
+        .branch-arrow-h {
+            font-size: 1.1rem;
+            color: var(--accent-1);
+            opacity: 0.7;
+            align-self: center;
+            margin-top: -14px;
+        }
+
+        /* Divider line between steps */
+        .flow-divider {
+            width: 1px;
+            height: 18px;
+            background: linear-gradient(to bottom, var(--accent-1), var(--accent-2));
+            opacity: 0.3;
+            margin: 0.1rem 0;
+        }
+
+        /* Final row: PowerAutomate → Sharepoint */
+        .flow-final-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* Contact */
         .contact-content {
             max-width: 700px;
             text-align: center;
@@ -353,62 +548,37 @@
 
         /* Animations */
         @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(-50px); }
+            to   { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(50px); }
+            to   { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(50px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-10px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-5px);
-            }
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero {
+            .hero,
+            .featured-project,
+            .pres-agent-wrapper {
                 flex-direction: column;
                 text-align: center;
             }
 
-            .featured-project {
-                flex-direction: column;
-            }
-
-            .project-content h2 {
+            .project-content h2,
+            .pres-agent-desc h2 {
                 text-align: center;
             }
 
@@ -419,12 +589,17 @@
             section {
                 padding: 2rem 1rem;
             }
+
+            .pres-agent-flow {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Hero Section -->
+
+        <!-- Hero -->
         <section id="home">
             <div class="hero">
                 <div class="hero-content">
@@ -439,7 +614,7 @@
             <div class="scroll-indicator"></div>
         </section>
 
-        <!-- About Section -->
+        <!-- About -->
         <section id="about">
             <div class="about-content">
                 <h2>About Me</h2>
@@ -454,7 +629,7 @@
             </div>
         </section>
 
-        <!-- Featured Project: Voice AI Agent Platform -->
+        <!-- Featured Project: Voice AI Agent -->
         <section id="featured-project">
             <div class="featured-project">
                 <div class="project-content">
@@ -474,7 +649,106 @@
             </div>
         </section>
 
-        <!-- Work Section -->
+        <!-- Presentation Agent -->
+        <section id="presentation-agent">
+            <div class="pres-agent-wrapper">
+
+                <!-- Left: description + bullets -->
+                <div class="pres-agent-desc">
+                    <h2>Presentation Agent</h2>
+                    <p>
+                        An end-to-end automated pipeline that turns a Teams message into a branded HTML presentation — no manual effort required.
+                    </p>
+                    <ul>
+                        <li>Placeholder bullet point one: describe a key outcome, metric, or user benefit of this project here.</li>
+                        <li>Placeholder bullet point two: highlight a technical achievement, scale, or novel capability of the system.</li>
+                        <li>Placeholder bullet point three: note the business impact, time saved, or strategic value delivered.</li>
+                    </ul>
+                </div>
+
+                <!-- Right: flow diagram -->
+                <div class="pres-agent-flow">
+                    <div class="flow-diagram">
+
+                        <!-- Step 1: Teams → Power Automate -->
+                        <div class="flow-row">
+                            <div class="flow-node">
+                                <img src="./Teams.jpeg" alt="Microsoft Teams">
+                                <span>Teams</span>
+                            </div>
+                            <div class="flow-arrow-h">→</div>
+                            <div class="flow-node">
+                                <img src="./PowerAutomate.webp" alt="Power Automate">
+                                <span>Power Automate</span>
+                            </div>
+                        </div>
+                        <div class="flow-step-label">Monitors Teams channel for user prompts</div>
+
+                        <div class="flow-divider"></div>
+                        <div class="flow-arrow-v">↓</div>
+                        <div class="flow-divider"></div>
+
+                        <!-- Step 2: Jenkins -->
+                        <div class="flow-row">
+                            <div class="flow-node">
+                                <img src="./Jenkins.png" alt="Jenkins">
+                                <span>Jenkins</span>
+                            </div>
+                        </div>
+                        <div class="flow-step-label">Injects context into prompt &amp; routes to Cursor agent endpoint</div>
+
+                        <div class="flow-divider"></div>
+                        <div class="flow-arrow-v">↓</div>
+                        <div class="flow-divider"></div>
+
+                        <!-- Step 3: Cursor ← GitHub + S3 -->
+                        <div class="flow-branch">
+                            <div class="flow-branch-inputs">
+                                <div class="flow-branch-pair">
+                                    <div class="flow-node">
+                                        <img src="./Github.png" alt="GitHub">
+                                        <span>GitHub</span>
+                                    </div>
+                                    <div class="flow-node">
+                                        <img src="./AmazonS3.png" alt="Amazon S3">
+                                        <span>Amazon S3</span>
+                                    </div>
+                                </div>
+                                <div class="flow-step-label" style="font-size:0.65rem;">HTML templates · Branding guidelines · Asset images</div>
+                            </div>
+                            <div class="branch-arrow-h">→</div>
+                            <div class="flow-node">
+                                <img src="./Cursor.webp" alt="Cursor">
+                                <span>Cursor Agent</span>
+                            </div>
+                        </div>
+                        <div class="flow-step-label">Generates &amp; edits branded HTML presentations</div>
+
+                        <div class="flow-divider"></div>
+                        <div class="flow-arrow-v">↓</div>
+                        <div class="flow-divider"></div>
+
+                        <!-- Step 4: Power Automate → SharePoint -->
+                        <div class="flow-row">
+                            <div class="flow-node">
+                                <img src="./PowerAutomate.webp" alt="Power Automate">
+                                <span>Power Automate</span>
+                            </div>
+                            <div class="flow-arrow-h">→</div>
+                            <div class="flow-node">
+                                <img src="./Sharepoint.png" alt="SharePoint">
+                                <span>SharePoint</span>
+                            </div>
+                        </div>
+                        <div class="flow-step-label">Publishes to SharePoint &amp; emails link to identified recipients</div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Work -->
         <section id="work">
             <div class="work-content">
                 <h2>More Work</h2>
@@ -504,7 +778,7 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact -->
         <section id="contact">
             <div class="contact-content">
                 <h2>Let's Connect</h2>
@@ -519,24 +793,20 @@
                 </div>
             </div>
         </section>
+
     </div>
 
     <script>
-        // Smooth scroll for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // Add parallax effect to hero image
         const heroImage = document.querySelector('.hero-image img');
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
