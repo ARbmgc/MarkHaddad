@@ -20,11 +20,7 @@
             --border-radius: 24px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'DM Sans', sans-serif;
@@ -54,8 +50,7 @@
         section::before {
             content: '';
             position: absolute;
-            width: 600px;
-            height: 600px;
+            width: 600px; height: 600px;
             background: var(--accent-gradient);
             opacity: 0.03;
             border-radius: 50%;
@@ -64,541 +59,210 @@
             z-index: 0;
         }
 
-        section:nth-child(odd)::before {
-            top: -200px;
-            right: -200px;
-        }
-
-        section:nth-child(even)::before {
-            bottom: -200px;
-            left: -200px;
-        }
+        section:nth-child(odd)::before  { top: -200px; right: -200px; }
+        section:nth-child(even)::before { bottom: -200px; left: -200px; }
 
         /* Hero */
         .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4rem;
-            flex-wrap: wrap;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+            display: flex; align-items: center; justify-content: center;
+            gap: 4rem; flex-wrap: wrap;
+            max-width: 1400px; margin: 0 auto;
+            position: relative; z-index: 1;
         }
-
-        .hero-content {
-            flex: 1;
-            min-width: 300px;
-            animation: fadeInLeft 1s ease-out;
-        }
-
-        .hero-image {
-            flex: 1;
-            min-width: 300px;
-            max-width: 450px;
-            animation: fadeInRight 1s ease-out;
-        }
-
+        .hero-content { flex: 1; min-width: 300px; animation: fadeInLeft 1s ease-out; }
+        .hero-image   { flex: 1; min-width: 300px; max-width: 450px; animation: fadeInRight 1s ease-out; }
         .hero-image img {
-            width: 100%;
-            height: auto;
+            width: 100%; height: auto;
             border-radius: var(--border-radius);
-            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0,212,255,0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .hero-image img:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 30px 80px rgba(0, 212, 255, 0.3);
-        }
+        .hero-image img:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 30px 80px rgba(0,212,255,0.3); }
 
         h1 {
             font-family: 'Crimson Pro', serif;
             font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 600;
-            line-height: 1.1;
-            margin-bottom: 1rem;
+            font-weight: 600; line-height: 1.1; margin-bottom: 1rem;
             background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-
-        .subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
+        .subtitle { font-size: clamp(1.2rem,3vw,1.5rem); color: var(--text-secondary); margin-bottom: 2rem; font-weight: 300; }
         .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--accent-gradient);
-            color: var(--bg-dark);
-            text-decoration: none;
-            border-radius: calc(var(--border-radius) / 2);
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            display: inline-block; padding: 1rem 2.5rem;
+            background: var(--accent-gradient); color: var(--bg-dark);
+            text-decoration: none; border-radius: calc(var(--border-radius)/2);
+            font-weight: 600; transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,212,255,0.3);
         }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
-        }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,212,255,0.5); }
 
         /* About */
-        .about-content {
-            max-width: 900px;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        h2 {
-            font-family: 'Crimson Pro', serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            margin-bottom: 2rem;
-            color: var(--text-primary);
-        }
-
-        .about-content p {
-            font-size: 1.25rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
+        .about-content { max-width: 900px; text-align: center; position: relative; z-index: 1; animation: fadeInUp 1s ease-out; }
+        h2 { font-family: 'Crimson Pro', serif; font-size: clamp(2.5rem,6vw,4rem); margin-bottom: 2rem; color: var(--text-primary); }
+        .about-content p { font-size: 1.25rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem; }
 
         /* Work */
-        .work-content {
-            max-width: 1400px;
-            width: 100%;
-            position: relative;
-            z-index: 1;
-        }
-
-        .work-content h2 {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
+        .work-content { max-width: 1400px; width: 100%; position: relative; z-index: 1; }
+        .work-content h2 { text-align: center; margin-bottom: 4rem; }
+        .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px,1fr)); gap: 2rem; animation: fadeInUp 1s ease-out; }
         .work-card {
-            background: var(--bg-card);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+            background: var(--bg-card); border-radius: var(--border-radius);
+            overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;
         }
-
-        .work-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
-        }
-
-        .work-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .work-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .work-card-content {
-            padding: 2rem;
-        }
-
-        .work-card h3 {
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .work-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
+        .work-card:hover { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(0,212,255,0.2); }
+        .work-card img { width: 100%; height: 300px; object-fit: cover; transition: transform 0.3s ease; }
+        .work-card:hover img { transform: scale(1.05); }
+        .work-card-content { padding: 2rem; }
+        .work-card h3 { font-family: 'Crimson Pro', serif; font-size: 1.75rem; margin-bottom: 0.5rem; color: var(--text-primary); }
+        .work-card p { color: var(--text-secondary); line-height: 1.6; }
 
         /* Featured Project */
         .featured-project {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4rem;
-            flex-wrap: wrap;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+            display: flex; align-items: center; justify-content: center;
+            gap: 4rem; flex-wrap: wrap;
+            max-width: 1400px; margin: 0 auto;
+            position: relative; z-index: 1;
         }
-
-        .project-content {
-            flex: 1;
-            min-width: 300px;
-            animation: fadeInLeft 1s ease-out;
-        }
-
-        .project-content h2 {
-            font-family: 'Crimson Pro', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .project-content p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .project-video {
-            flex: 1;
-            min-width: 300px;
-            max-width: 600px;
-            animation: fadeInRight 1s ease-out;
-        }
-
+        .project-content { flex: 1; min-width: 300px; animation: fadeInLeft 1s ease-out; }
+        .project-content h2 { font-family: 'Crimson Pro', serif; font-size: clamp(2rem,5vw,3rem); margin-bottom: 1.5rem; text-align: left; }
+        .project-content p { font-size: 1.2rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .project-video { flex: 1; min-width: 300px; max-width: 600px; animation: fadeInRight 1s ease-out; }
         .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: var(--border-radius);
-            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+            border-radius: var(--border-radius); box-shadow: 0 20px 60px rgba(0,212,255,0.2);
         }
-
         .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             border-radius: var(--border-radius);
         }
 
-        /* ── Presentation Agent Section ── */
+        /* ── Shared Agent Section Layout ── */
         .pres-agent-wrapper {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            gap: 4rem;
-            flex-wrap: wrap;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+            display: flex; align-items: flex-start; justify-content: center;
+            gap: 4rem; flex-wrap: wrap;
+            max-width: 1400px; margin: 0 auto;
+            position: relative; z-index: 1;
         }
 
-        /* Left: description */
-        .pres-agent-desc {
-            flex: 1;
-            min-width: 280px;
-            max-width: 420px;
-            animation: fadeInLeft 1s ease-out;
-        }
-
-        .pres-agent-desc h2 {
-            font-family: 'Crimson Pro', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 1.25rem;
-            text-align: left;
-        }
-
-        .pres-agent-desc p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .pres-agent-desc ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.9rem;
-        }
-
+        .pres-agent-desc { flex: 1; min-width: 280px; max-width: 420px; animation: fadeInLeft 1s ease-out; }
+        .pres-agent-desc h2 { font-family: 'Crimson Pro', serif; font-size: clamp(2rem,5vw,3rem); margin-bottom: 1.25rem; text-align: left; }
+        .pres-agent-desc p { font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .pres-agent-desc ul { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
         .pres-agent-desc ul li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
+            display: flex; align-items: flex-start; gap: 0.75rem;
+            font-size: 1rem; color: var(--text-secondary); line-height: 1.6;
         }
-
         .pres-agent-desc ul li::before {
-            content: '';
-            flex-shrink: 0;
-            margin-top: 0.45rem;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent-gradient);
+            content: ''; flex-shrink: 0; margin-top: 0.45rem;
+            width: 6px; height: 6px; border-radius: 50%;
             background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
         }
 
-        /* Right: flow diagram */
-        .pres-agent-flow {
-            flex: 1;
-            min-width: 300px;
-            max-width: 520px;
-            animation: fadeInRight 1s ease-out;
-        }
+        .pres-agent-flow { flex: 1; min-width: 300px; max-width: 520px; animation: fadeInRight 1s ease-out; }
 
         .flow-diagram {
-            background: var(--bg-card);
-            border-radius: var(--border-radius);
+            background: var(--bg-card); border-radius: var(--border-radius);
             padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0;
-            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.1);
+            display: flex; flex-direction: column; align-items: center; gap: 0;
+            box-shadow: 0 20px 60px rgba(0,212,255,0.1);
             border: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* Each row in the flow */
-        .flow-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            width: 100%;
-        }
+        .flow-row { display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; }
 
-        /* A single node */
-        .flow-node {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.4rem;
-            flex-shrink: 0;
-        }
-
+        .flow-node { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; flex-shrink: 0; }
         .flow-node img {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.05);
-            padding: 6px;
+            width: 48px; height: 48px; object-fit: contain;
+            border-radius: 10px; background: rgba(255,255,255,0.05); padding: 6px;
             transition: transform 0.2s ease;
         }
+        .flow-node img:hover { transform: scale(1.15); }
+        .flow-node--lg img { width: 68px; height: 68px; }
+        .flow-node span { font-size: 0.68rem; font-weight: 500; color: var(--text-secondary); text-align: center; letter-spacing: 0.02em; white-space: nowrap; }
 
-        .flow-node img:hover {
-            transform: scale(1.15);
-        }
+        .flow-arrow-h  { font-size: 1.1rem; color: var(--accent-1); opacity: 0.7; flex-shrink: 0; margin-top: -14px; }
+        .flow-arrow-v  { font-size: 1.1rem; color: var(--accent-1); opacity: 0.7; margin: 0.2rem 0; }
 
-        .flow-node--lg img {
-            width: 68px;
-            height: 68px;
-        }
-
-        .flow-node span {
-            font-size: 0.68rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            text-align: center;
-            letter-spacing: 0.02em;
-            white-space: nowrap;
-        }
-
-        /* Arrows between nodes */
-        .flow-arrow-h {
-            font-size: 1.1rem;
-            color: var(--accent-1);
-            opacity: 0.7;
-            flex-shrink: 0;
-            margin-top: -14px; /* align with image center */
-        }
-
-        .flow-arrow-v {
-            font-size: 1.1rem;
-            color: var(--accent-1);
-            opacity: 0.7;
-            margin: 0.2rem 0;
-        }
-
-        /* Step label */
         .flow-step-label {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            opacity: 0.6;
-            text-align: center;
-            max-width: 380px;
-            padding: 0 0.5rem 0.3rem;
-            line-height: 1.5;
+            font-size: 0.7rem; color: var(--text-secondary); opacity: 0.6;
+            text-align: center; max-width: 380px;
+            padding: 0 0.5rem 0.3rem; line-height: 1.5;
         }
 
-        /* Branch row: GitHub + S3 feeding into Cursor */
-        .flow-branch {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            gap: 1.5rem;
-            width: 100%;
+        .flow-branch { display: flex; align-items: flex-start; justify-content: center; gap: 1.5rem; width: 100%; }
+        .flow-branch-inputs { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+        .flow-branch-pair { display: flex; gap: 1rem; align-items: flex-end; }
+        .branch-arrow-h { font-size: 1.1rem; color: var(--accent-1); opacity: 0.7; align-self: center; margin-top: -14px; }
+
+        .flow-divider {
+            width: 1px; height: 18px;
+            background: linear-gradient(to bottom, var(--accent-1), var(--accent-2));
+            opacity: 0.3; margin: 0.1rem 0;
         }
 
-        .flow-branch-inputs {
-            display: flex;
+        /* Migration mini-diagram */
+        .migration-block {
+            margin-top: 2rem;
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 1rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            display: inline-flex;
             flex-direction: column;
-            align-items: center;
-            gap: 0.3rem;
+            gap: 0.75rem;
         }
-
-        .flow-branch-pair {
+        .migration-label {
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            opacity: 0.7;
+            font-style: italic;
+            margin: 0;
+        }
+        .migration-row {
             display: flex;
+            align-items: center;
             gap: 1rem;
-            align-items: flex-end;
         }
-
-        .branch-arrow-h {
-            font-size: 1.1rem;
+        .migration-arrow {
+            font-size: 1rem;
             color: var(--accent-1);
             opacity: 0.7;
-            align-self: center;
-            margin-top: -14px;
-        }
-
-        /* Divider line between steps */
-        .flow-divider {
-            width: 1px;
-            height: 18px;
-            background: linear-gradient(to bottom, var(--accent-1), var(--accent-2));
-            opacity: 0.3;
-            margin: 0.1rem 0;
-        }
-
-        /* Final row: PowerAutomate → Sharepoint */
-        .flow-final-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
+            margin-bottom: 14px;
         }
 
         /* Contact */
-        .contact-content {
-            max-width: 700px;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .contact-content h2 {
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-content p {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            line-height: 1.8;
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
+        .contact-content { max-width: 700px; text-align: center; position: relative; z-index: 1; animation: fadeInUp 1s ease-out; }
+        .contact-content h2 { margin-bottom: 1.5rem; }
+        .contact-content p { font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 3rem; line-height: 1.8; }
+        .contact-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
         .contact-link {
-            padding: 1rem 2rem;
-            background: var(--bg-card);
-            color: var(--text-primary);
-            text-decoration: none;
-            border-radius: calc(var(--border-radius) / 2);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            padding: 1rem 2rem; background: var(--bg-card); color: var(--text-primary);
+            text-decoration: none; border-radius: calc(var(--border-radius)/2);
+            font-weight: 500; transition: all 0.3s ease; border: 2px solid transparent;
         }
+        .contact-link:hover { border-color: var(--accent-1); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,212,255,0.2); }
 
-        .contact-link:hover {
-            border-color: var(--accent-1);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
-        }
-
-        /* Scroll indicator */
         .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-            cursor: pointer;
+            position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+            animation: bounce 2s infinite; cursor: pointer;
         }
+        .scroll-indicator::before { content: '↓'; font-size: 2rem; color: var(--accent-1); }
 
-        .scroll-indicator::before {
-            content: '↓';
-            font-size: 2rem;
-            color: var(--accent-1);
-        }
-
-        /* Animations */
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
-            to   { opacity: 1; transform: translateX(0); }
-        }
-
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(50px); }
-            to   { opacity: 1; transform: translateX(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
+        @keyframes fadeInLeft  { from { opacity:0; transform:translateX(-50px); } to { opacity:1; transform:translateX(0); } }
+        @keyframes fadeInRight { from { opacity:0; transform:translateX(50px);  } to { opacity:1; transform:translateX(0); } }
+        @keyframes fadeInUp    { from { opacity:0; transform:translateY(50px);  } to { opacity:1; transform:translateY(0); } }
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            0%,20%,50%,80%,100% { transform: translateX(-50%) translateY(0); }
             40% { transform: translateX(-50%) translateY(-10px); }
             60% { transform: translateX(-50%) translateY(-5px); }
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero,
-            .featured-project,
-            .pres-agent-wrapper {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .project-content h2,
-            .pres-agent-desc h2 {
-                text-align: center;
-            }
-
-            .work-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 2rem 1rem;
-            }
-
-            .pres-agent-flow {
-                width: 100%;
-            }
+            .hero, .featured-project, .pres-agent-wrapper { flex-direction: column; text-align: center; }
+            .project-content h2, .pres-agent-desc h2 { text-align: center; }
+            .work-grid { grid-template-columns: 1fr; }
+            section { padding: 2rem 1rem; }
+            .pres-agent-flow { width: 100%; }
         }
     </style>
 </head>
@@ -635,31 +299,124 @@
             </div>
         </section>
 
-        <!-- Featured Project: Voice AI Agent -->
-        <section id="featured-project">
-            <div class="featured-project">
-                <div class="project-content">
-                    <h2>Voice AI Agent Platform</h2>
+        <!-- AI Churn and Attrition Dashboard -->
+        <section id="churn-dashboard">
+            <div class="pres-agent-wrapper">
+
+                <div class="pres-agent-desc">
+                    <h2>AI Churn &amp; Attrition Dashboard</h2>
                     <p>
-                        Built a voice-based AI agent platform on Oculus Quest 3 that revolutionizes how financial analysts interact with data, enabling hands-free analysis through natural language commands and immersive 3D visualizations.
+                        A fully automated pipeline that unifies multi-source customer data and applies GPT-powered analysis to surface actionable churn signals for senior management.
                     </p>
-                    <p>
-                        This platform combines cutting-edge voice recognition, spatial computing, and AI to create an intuitive interface that transforms complex financial data into actionable insights through conversational interactions.
-                    </p>
-                </div>
-                <div class="project-video">
-                    <div class="video-wrapper">
-                        <iframe src="https://player.vimeo.com/video/1165488448?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="OculusAgents"></iframe>
+                    <ul>
+                        <li>Placeholder bullet point one — describe a key outcome or business impact here.</li>
+                        <li>Placeholder bullet point two — describe scale, speed improvement, or stakeholder reach here.</li>
+                        <li>Placeholder bullet point three — describe extensibility, adoption, or strategic value here.</li>
+                    </ul>
+
+                    <!-- Migration mini-diagram -->
+                    <div class="migration-block">
+                        <p class="migration-label">Currently undergoing migration to</p>
+                        <div class="migration-row">
+                            <div class="flow-node">
+                                <img src="./Databricks.png" alt="Databricks" style="width:40px;height:40px;">
+                                <span>Databricks</span>
+                            </div>
+                            <div class="migration-arrow">→</div>
+                            <div class="flow-node">
+                                <img src="./MosaicML.png" alt="MosaicML" style="width:40px;height:40px;">
+                                <span>MosaicML</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="pres-agent-flow">
+                    <div class="flow-diagram">
+
+                        <!-- Step 1: Five data sources -->
+                        <div class="flow-branch">
+                            <div class="flow-branch-inputs">
+                                <div class="flow-branch-pair">
+                                    <div class="flow-node">
+                                        <img src="./Gainsight.webp" alt="Gainsight">
+                                        <span>Gainsight</span>
+                                    </div>
+                                    <div class="flow-node">
+                                        <img src="./PostgreSql.png" alt="PostgreSQL">
+                                        <span>PostgreSQL</span>
+                                    </div>
+                                    <div class="flow-node">
+                                        <img src="./Qualtrics.webp" alt="Qualtrics">
+                                        <span>Qualtrics</span>
+                                    </div>
+                                    <div class="flow-node">
+                                        <img src="./Salesforce.png" alt="Salesforce">
+                                        <span>Salesforce</span>
+                                    </div>
+                                    <div class="flow-node">
+                                        <img src="./Excel.png" alt="Excel">
+                                        <span>Excel</span>
+                                    </div>
+                                </div>
+                                <div class="flow-step-label">Account health · ARR DB · Survey data · Meeting notes · CSM ad hoc data</div>
+                            </div>
+                        </div>
+
+                        <div class="flow-divider"></div>
+                        <div class="flow-arrow-v">↓</div>
+                        <div class="flow-divider"></div>
+
+                        <!-- Step 2: GitHub + Jenkins join & group -->
+                        <div class="flow-row">
+                            <div class="flow-node flow-node--lg">
+                                <img src="./Github.png" alt="GitHub">
+                                <span>GitHub</span>
+                            </div>
+                            <div class="flow-arrow-h">→</div>
+                            <div class="flow-node flow-node--lg">
+                                <img src="./Jenkins.png" alt="Jenkins">
+                                <span>Jenkins</span>
+                            </div>
+                        </div>
+                        <div class="flow-step-label">Joins all sources on accountID + product key; groups records per unique pair</div>
+
+                        <div class="flow-divider"></div>
+                        <div class="flow-arrow-v">↓</div>
+                        <div class="flow-divider"></div>
+
+                        <!-- Step 3: ChatGPT parallelized -->
+                        <div class="flow-row">
+                            <div class="flow-node flow-node--lg">
+                                <img src="./ChatGPT.png" alt="ChatGPT">
+                                <span>ChatGPT API</span>
+                            </div>
+                        </div>
+                        <div class="flow-step-label">Each account–product pair analyzed via parallelized GPT threads → output CSV</div>
+
+                        <div class="flow-divider"></div>
+                        <div class="flow-arrow-v">↓</div>
+                        <div class="flow-divider"></div>
+
+                        <!-- Step 4: Power BI -->
+                        <div class="flow-row">
+                            <div class="flow-node flow-node--lg">
+                                <img src="./PowerBI.png" alt="Power BI">
+                                <span>Power BI</span>
+                            </div>
+                        </div>
+                        <div class="flow-step-label">Churn signals surfaced in an interactive dashboard for senior management</div>
+
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- Presentation Agent -->
+        <!-- MA Scorecard Agent -->
         <section id="presentation-agent">
             <div class="pres-agent-wrapper">
 
-                <!-- Left: description + bullets -->
                 <div class="pres-agent-desc">
                     <h2>MA Scorecard Agent</h2>
                     <p>
@@ -668,15 +425,13 @@
                     <ul>
                         <li>Reduced company wide scorecard update cycles from 2/3 hours of manual slide editing to under 5 minutes, enabling live dashboard refreshes as roadmap priorities shift in real time for the C-suite audience.</li>
                         <li>Replaced inconsistent roadmap decks across 5 senior teams with a single living dashboard, freeing up meaningful hours of executive time previously spent on formatting and version control.</li>
-                        <li>Currently live with approximatly 15 senior stakeholders, with a clear path to scale across 100+ members of Moody's senior management. Extensible to general presentations and lightweight data dashboards beyond scorecards.</li>
+                        <li>Currently live with approximately 15 senior stakeholders, with a clear path to scale across 100+ members of Moody's senior management. Extensible to general presentations and lightweight data dashboards beyond scorecards.</li>
                     </ul>
                 </div>
 
-                <!-- Right: flow diagram -->
                 <div class="pres-agent-flow">
                     <div class="flow-diagram">
 
-                        <!-- Step 1: Teams → Power Automate -->
                         <div class="flow-row">
                             <div class="flow-node">
                                 <img src="./Teams.png" alt="Microsoft Teams">
@@ -694,7 +449,6 @@
                         <div class="flow-arrow-v">↓</div>
                         <div class="flow-divider"></div>
 
-                        <!-- Step 2: Jenkins -->
                         <div class="flow-row">
                             <div class="flow-node flow-node--lg">
                                 <img src="./Jenkins.png" alt="Jenkins">
@@ -707,7 +461,6 @@
                         <div class="flow-arrow-v">↓</div>
                         <div class="flow-divider"></div>
 
-                        <!-- Step 3: Cursor ← GitHub + S3 -->
                         <div class="flow-branch">
                             <div class="flow-branch-inputs">
                                 <div class="flow-branch-pair">
@@ -715,8 +468,8 @@
                                         <img src="./Github.png" alt="GitHub">
                                         <span>GitHub</span>
                                     </div>
-                                    <div class="flow-node flow-node--lg">
-                                        <img src="./AmazonS3.jpeg" alt="Amazon S3">
+                                    <div class="flow-node">
+                                        <img src="./AmazonS3.jpeg" alt="Amazon S3" style="width:36px;height:36px;">
                                         <span>Amazon S3</span>
                                     </div>
                                 </div>
@@ -734,7 +487,6 @@
                         <div class="flow-arrow-v">↓</div>
                         <div class="flow-divider"></div>
 
-                        <!-- Step 4: Power Automate → SharePoint -->
                         <div class="flow-row">
                             <div class="flow-node">
                                 <img src="./PowerAutomate.webp" alt="Power Automate">
@@ -754,31 +506,21 @@
             </div>
         </section>
 
-        <!-- Work -->
-        <section id="work">
-            <div class="work-content">
-                <h2>More Work</h2>
-                <div class="work-grid">
-                    <div class="work-card">
-                        <img src="filler1.jpeg" alt="AR Financial Dashboard">
-                        <div class="work-card-content">
-                            <h3>AR Financial Dashboard</h3>
-                            <p>Developed an immersive augmented reality financial dashboard for Apple Vision Pro, integrating live news feeds, generative AI, and proprietary Moody's data via RAG to deliver spatial company insights and expert recommendations.</p>
-                        </div>
-                    </div>
-                    <div class="work-card">
-                        <img src="filler3.jpeg" alt="AI-Powered Product Discovery">
-                        <div class="work-card-content">
-                            <h3>AI-Powered Product Discovery</h3>
-                            <p>Leveraged generative AI to accelerate the entire product lifecycle from market research to MVP development, utilizing semantic analysis to extract insights from customer feedback and create predictive analytics models.</p>
-                        </div>
-                    </div>
-                    <div class="work-card">
-                        <img src="filler4.jpeg" alt="Innovation Workshops">
-                        <div class="work-card-content">
-                            <h3>Innovation Workshops</h3>
-                            <p>Facilitated 30+ design thinking workshops generating breakthrough product ideas across emerging tech including quantum computing, blockchain, and spatial computing, saving over $2MM in external consulting costs.</p>
-                        </div>
+        <!-- Featured Project: Voice AI Agent -->
+        <section id="featured-project">
+            <div class="featured-project">
+                <div class="project-content">
+                    <h2>Voice AI Agent Platform</h2>
+                    <p>
+                        Built a voice-based AI agent platform on Oculus Quest 3 that revolutionizes how financial analysts interact with data, enabling hands-free analysis through natural language commands and immersive 3D visualizations.
+                    </p>
+                    <p>
+                        This platform combines cutting-edge voice recognition, spatial computing, and AI to create an intuitive interface that transforms complex financial data into actionable insights through conversational interactions.
+                    </p>
+                </div>
+                <div class="project-video">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/1165488448?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="OculusAgents"></iframe>
                     </div>
                 </div>
             </div>
@@ -802,17 +544,15 @@
 
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
-
-        const heroImage = document.querySelector('.hero-image img');
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
+    </script>
+</body>
+</html>
